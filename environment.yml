@@ -1,0 +1,12 @@
+name: myenv
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - ipykernel
+  - numpy
+  - matplotlib
+  - seaborn
+  - bs4
+  - requests
+prefix: /home/wye/anaconda3/envs/myenv
