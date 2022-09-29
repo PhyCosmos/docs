@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. Methods in classes &mdash; notes 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Namespace in Python" href="namespace.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: tomato" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> notes
+          
+
+          
+            
+            <img src="../_static/mylogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="namespace.html">Namespace in Python</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Methods in classes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>1. Methods in classes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/python/instance_class_static.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="methods-in-classes">
+<h1>1. Methods in classes<a class="headerlink" href="#methods-in-classes" title="Permalink to this heading">¶</a></h1>
+<p>class 안에 있는 method 는 오브젝트 <code class="docutils literal notranslate"><span class="pre">cls</span></code>와 인스턴스 <code class="docutils literal notranslate"><span class="pre">self</span></code>에 대한 access 방식에 따라 3 가지로 나눌 수 있다.</p>
+<ul>
+<li> 클래스 디자인의 의도를 강제하려는 목적과 </li>
+<li> 그러한 의도를 쉽게 알아보게 하여 맞춤관리에 도움을 주고자 <s>할 뿐 엄격하지는 않다</s>. </li>
+</ul>  
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>메서드</p></th>
+<th class="head text-left"><p>접근방식</p></th>
+<th class="head text-left"><p>호출형식</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>instance method</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">self</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">obj</span> <span class="pre">=</span> <span class="pre">ClassName();</span> <span class="pre">obj.instance_method()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>class method</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">cls</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">ClassName.class_method()</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>static method</p></td>
+<td class="text-left"><p>없음</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">ClassName.static_mehtod()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><ol class="arabic simple">
+<li><p>static method는 독립적으로 사용할 수 있지만, class <a class="reference internal" href="namespace.html"><span class="doc std std-doc">namespace</span></a>에 속하게 된다.</p></li>
+</ol>
+<ul class="simple">
+<li><p>class나 instance에 접근할 수 있는 권한이 없으므로 수정하는 행위가 차단된다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code> 데코레이터를 사용하여 정의한다.</p></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><ol class="arabic simple" start="2">
+<li><p>class method는 class 오브젝트에 관한 method로서 인스턴스에 대한 접근이 금지된다.</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code> 데코레이터를 사용하여  정의한다.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><ol class="arabic simple" start="3">
+<li><p>instance method는 인스턴스<code class="docutils literal notranslate"><span class="pre">self</span></code>에 접근할 수 있는 메서드이므로 instantiation이 반드시 필요하다.</p></li>
+</ol>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">class</span> <span class="nc">MyAccount</span><span class="p">:</span>
+    <span class="n">trans_cost</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">account_number</span><span class="p">,</span> <span class="n">balance</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">account_number</span> <span class="o">=</span> <span class="n">account_number</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="n">balance</span>
+    <span class="c1"># 1    </span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">account_number</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span><span class="p">))</span>
+    <span class="c1"># 2</span>
+    <span class="nd">@staticmethod</span>    
+    <span class="k">def</span> <span class="nf">interest_rate_year</span><span class="p">(</span><span class="n">r_month</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r_month</span><span class="p">)</span><span class="o">**</span><span class="mi">12</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="c1"># 3</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_trans_cost</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">trans_cost</span><span class="p">)</span>
+        
+    
+<span class="n">MyAccount</span><span class="o">.</span><span class="n">interest_rate_year</span><span class="p">(</span><span class="mf">0.005</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0.06167781186449828
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MyAccount</span><span class="o">.</span><span class="n">get_trans_cost</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;10&#39;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">myaccount</span> <span class="o">=</span> <span class="n">MyAccount</span><span class="p">(</span><span class="s1">&#39;yang&#39;</span><span class="p">,</span> <span class="s1">&#39;123-456-7890&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">myaccount</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(&#39;yang&#39;, &#39;123-456-7890&#39;, 1000)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">1</span></code> <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> : 인스턴스를 어떻게 나타낼지 정하는 인스턴스 메서드( <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>도 있다.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">2</span></code> 클래스 객체나 인스턴스 객체에 접근할 필요는 없지만, MyAccount에서 필요로 할 만한 기능이나
+함께 묶어 객체화 하는 것이 자연스러운 메서드를 <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code>로 정의하면 좋을 것이다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">3</span></code> 인스턴스와는 별개지만, 클래스에 속하는 attributes에 관계된 메서드를 <code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code>로
+정의하면 좋을 것이다.</p></li>
+</ul>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="namespace.html" class="btn btn-neutral float-left" title="Namespace in Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, wYe
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
