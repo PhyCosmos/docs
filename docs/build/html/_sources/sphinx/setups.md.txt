@@ -95,3 +95,4 @@ The project name will occur in several places in the built documentation.
 - settings로 클릭해서 들어가면 사이드 바에서 pages항목으로 클릭해 이동한다.
 - Source 항목에서 `Deploy from a branch`, Branch 항목에서 `gh-pages` , `/docs/` 로 설정하고 `Save`한다.
 - Actions 탭을 클릭하면 배포과정을 볼 수 있고 완료할 때까지 기다려야 한댜.
+- 일단락된 [사이트](https://phycosmos.github.io/docs/build/html/index.html)
