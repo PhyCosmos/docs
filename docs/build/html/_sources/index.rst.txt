@@ -6,11 +6,9 @@
 .. :github_url:
 ..    https://github.com/PhyCosmos/notes
 
-Lots to Learn!
-=================================
 
-Python Basic Tips
------------------
+Languages
+========================
 
 .. toctree::
    :maxdepth: 2
@@ -19,11 +17,12 @@ Python Basic Tips
    python/namespace.md
    python/instance_class_static.md
 
-Sphinx
-------
+Tools
+=======
+
 .. toctree::
    :maxdepth: 2
-   :caption: Tools:
+   :caption: Sphinx:
 
    sphinx/setups.md   
 

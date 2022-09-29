@@ -58,6 +58,9 @@
           
 
           
+            
+            <img src="../_static/mylogo.png" class="logo" alt="Logo"/>
+          
           </a>
 
           
@@ -89,7 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../python/namespace.html">1. Namespace in Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/instance_class_static.html">2. Methods in classes</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tools:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Sphinx:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. Sphinx for rendering Markdown to HTML</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#workflows-and-goal">1.1 Workflows and Goal</a></li>
@@ -251,7 +254,7 @@
 <li><p>첫부분에서 path 관련 코멘트를 해제하고 <code class="docutils literal notranslate"><span class="pre">(.)</span></code> 를 <code class="docutils literal notranslate"><span class="pre">(../..)</span></code>으로 즉, <code class="docutils literal notranslate"><span class="pre">doc/</span></code>폴더를 최상위 폴더로 만든다.</p></li>
 <li><p>다음처럼 각 항목을 채운다.  markdown 파서와 theme에 관한 확장들이다.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
 <span class="s1">&#39;sphinx_rtd_theme&#39;</span><span class="p">,</span>
 <span class="s1">&#39;myst_parser&#39;</span><span class="p">,</span>  
 <span class="p">]</span>
@@ -262,7 +265,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span>
 </pre></div>
 </div>
 </li>
@@ -276,11 +279,11 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code> jekyll을 사용하지 않곘다는 목적의 빈 파일이다.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">index.html</span></code> 시작페이지를 rediret할 목적으로 다음 스크립트로 채운다.</p></li>
 </ul>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;refresh&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;0; url=./build/html/index.html&quot;</span> <span class="p">/&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>  
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>  
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;refresh&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;0; url=./build/html/index.html&quot;</span> <span class="p">/&gt;</span>  
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>  
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>  
 </pre></div>
 </div>
 </li>
