@@ -14,7 +14,7 @@ Python Basic Tips
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Python:
 
    python/namespace.md
    python/instance_class_static.md
@@ -23,7 +23,7 @@ Sphinx
 ------
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Tools:
 
    sphinx/setups.md   
 
