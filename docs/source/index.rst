@@ -7,21 +7,22 @@
 ..    https://github.com/PhyCosmos/notes
 
 
-Languages
-========================
+Learning 
+=========
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Python:
 
    python/namespace.md
    python/instance_class_static.md
 
+
 Tools
-=======
+=========
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Sphinx:
 
    sphinx/setups.md   

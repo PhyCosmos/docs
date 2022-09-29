@@ -23,7 +23,7 @@ author = 'wYe'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
-
+html_baserul = 'https://phycosmos.github.io/docs/'
 
 # -- General configuration ---------------------------------------------------
 
@@ -31,6 +31,7 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.githubpages',   # basecrl 
     'sphinx_rtd_theme',
     'myst_parser',              # for markdown along with `source_suffix`
     'sphinx.ext.autosummary',
@@ -43,8 +44,7 @@ extensions = [
 
     'sphinx.ext.viewcode',      # view while browsing the documentation
     'sphinx.ext.todo',          # `todo_include_todos = True` 
-    'sphinx.ext.graphviz',
-    'sphinx.ext.intersphinx',
+    'sphinx.ext.intersphinx', 
 ]
 source_suffix = { # https://www.sphinx-doc.org/en/master/usage/markdown.html
     '.rst': 'restructuredtext',

@@ -26,7 +26,7 @@ markdown 쉽고 `LaTex` 수준으로 정갈한 스타일의 mark up language 이
 - 우선 파이썬의 경우 가상환경을 준비한다.  
     - 프로젝트에 관한 문서로 체워질 경우 프로젝트에서 사용되는 가상환경을 포함하게 될 것이다.(autodoc을 사용하려는 경우)  
     - 그 가상환경에서 pip 으로 sphinx와 파서, 테마 등을 설치한다.  
-    ```
+    ```bash
     pip install sphinx
     pip install myst_parser
     pip install sphinx_rtd_theme
@@ -34,13 +34,13 @@ markdown 쉽고 `LaTex` 수준으로 정갈한 스타일의 mark up language 이
 - 배포용 git branch를 따로 두는 (예를 들어 gh-pages)예제들이 많다.  
 
 - 프로젝트 폴더 안에서 `docs/` 라는 sphinx가 기동할 최상위 폴더를 만든다. 그 안에서 sphinx tool을 다음 명령으로 설치한다.  
-    ```
+    ```bash
     sphinx-quickstart
     ```
 
 - 다음의 선택사항을 확인하는 메시지가 출력되고 적당히 응답한다.
 
-```
+```bash
 You have two options for placing the build directory for Sphinx output.
 Either, you use a directory "_build" within the root path, or you separate
 "source" and "build" directories within the root path.
@@ -99,3 +99,11 @@ The project name will occur in several places in the built documentation.
 - Source 항목에서 `Deploy from a branch`, Branch 항목에서 `gh-pages` , `/docs/` 로 설정하고 `Save`한다.  
 - Actions 탭을 클릭하면 배포과정을 볼 수 있고 완료할 때까지 기다려야 한댜.  
 - 일단락된 [사이트](https://phycosmos.github.io/docs/build/html/index.html)
+
+
+## 1.5 Some issues and fixing them.
+- [bullet list 가 뷸렛 없이 랜더링 되는 경우](https://stackoverflow.com/questions/67542699/readthedocs-sphinx-not-rendering-bullet-list-from-rst-file),
+    - docutils=0.16 으로 다운 그레이드하면 해결된다. 즉,
+    ```bash
+    conda install docutils=0.16
+    ```
