@@ -74,7 +74,7 @@ html_static_path = ['_static']
 
 # customization
 html_logo = '_static/mylogo.png'
-html_theme_options = {
-    'style_nav_header_background': 'tomato',
+# html_theme_options = {
+#     'style_nav_header_background': 'tomato',
     
-}
+# }
