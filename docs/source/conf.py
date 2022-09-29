@@ -34,17 +34,17 @@ extensions = [
     'sphinx.ext.githubpages',   # basecrl 
     'sphinx_rtd_theme',
     'myst_parser',              # for markdown along with `source_suffix`
-    'sphinx.ext.autosummary',
-    'sphinx.ext.mathjax',
+    # 'sphinx.ext.autosummary',
+    # 'sphinx.ext.mathjax',
     
-    # documentation from docstrings
-    'sphinx.ext.duration',
-    'sphinx.ext.doctest',
-    'sphinx.ext.autodoc',
+    # # documentation from docstrings
+    # 'sphinx.ext.duration',
+    # 'sphinx.ext.doctest',
+    # 'sphinx.ext.autodoc',
 
-    'sphinx.ext.viewcode',      # view while browsing the documentation
-    'sphinx.ext.todo',          # `todo_include_todos = True` 
-    'sphinx.ext.intersphinx', 
+    # 'sphinx.ext.viewcode',      # view while browsing the documentation
+    # 'sphinx.ext.todo',          # `todo_include_todos = True` 
+    # 'sphinx.ext.intersphinx', 
 ]
 source_suffix = { # https://www.sphinx-doc.org/en/master/usage/markdown.html
     '.rst': 'restructuredtext',

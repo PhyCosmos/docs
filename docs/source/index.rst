@@ -3,9 +3,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-:github_url:
-   https://github.com/PhyCosmos/notes
-
 
 Learning 
 =========
@@ -18,8 +15,6 @@ Learning
    python/instance_class_static.md
 
 
-Tools
-=========
 
 .. toctree::
    :maxdepth: 3
