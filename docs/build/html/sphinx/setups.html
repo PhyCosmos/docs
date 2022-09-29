@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. Sphinx for rendering Markdown to HTML &mdash; notes 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="2. Methods in classes" href="../python/instance_class_static.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: tomato" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> notes
+          
+
+          
+            
+            <img src="../_static/mylogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python/namespace.html">1. Namespace in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/instance_class_static.html">2. Methods in classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Sphinx for rendering Markdown to HTML</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#workflows-and-goal">1.1 Workflows and Goal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1.2 손이 좀 간다.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#local">1.3 Local에서 하게 되는 구체적 과정과 주요 명령어</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sphinx">1.3.1 sphinx설치 및 준비단계</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#md-hierachy">1.3.2 <code class="docutils literal notranslate"><span class="pre">.md</span></code> 문서(폴더)를 이동/작성 하고 hierachy룰 기록한다.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#local-computer-html-build">1.3.3 설정하고서 local computer에서 html파일들로 build한다</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#github-pages">1.3.4 github pages에서 작동할 수 있게 두 가지 파일 추가</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#github">1.4 github 에 올리고 배포하기까지</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>1. Sphinx for rendering Markdown to HTML</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/sphinx/setups.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="sphinx-for-rendering-markdown-to-html">
+<h1>1. Sphinx for rendering Markdown to HTML<a class="headerlink" href="#sphinx-for-rendering-markdown-to-html" title="Permalink to this heading">¶</a></h1>
+<section id="workflows-and-goal">
+<h2>1.1 Workflows and Goal<a class="headerlink" href="#workflows-and-goal" title="Permalink to this heading">¶</a></h2>
+<p>markdown 쉽고 <code class="docutils literal notranslate"><span class="pre">LaTex</span></code> 수준으로 정갈한 스타일의 mark up language 이다. 빠르면서 깔끔하게 정리할 수 있어 많이 이용하게 되었다. 그래서 markdown으로 작성된 문서를 번잡한 과정을 거치지 않고 배포까지 할 수 있게 되면 금상첨화일 것이란 생각이 자연스레 들었다. sphinx와 github pages가 그 주인공이다.</p>
+<ul class="simple">
+<li><p>markdown 문서는 <code class="docutils literal notranslate"><span class="pre">.md</span></code> text문서와 함께 <code class="docutils literal notranslate"><span class="pre">.png</span></code>와 같은 문서에 쓰이는 이미지도 함께 보관하는 것이 편리하다. 그래서 항상 <code class="docutils literal notranslate"><span class="pre">.md</span></code> 파일들과 <code class="docutils literal notranslate"><span class="pre">images/</span></code> 폴더는 따라다닌다.</p></li>
+<li><p>문서들의 hierachy는 <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> 등의 <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> 마컵 언어로 작성된다. (약간의 학습이 필요하다.)</p></li>
+<li><p>python <code class="docutils literal notranslate"><span class="pre">.py</span></code> 파일을 autodoc하는 과정은 현재로서는 필요하지 않아서 생략한다.</p></li>
+<li><p>base <code class="docutils literal notranslate"><span class="pre">.md</span></code>문서들이 보관되는 폴더를 만들고 그 안에서 sphinx를 시작한다.</p></li>
+<li><p>그리고 나서, sphinx 설정 (path, 테마, 확장 등)몇가지를 한다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.rst</span></code>파일에서 hierachy를 정해주고 나서</p></li>
+<li><p>sphinx로 문서들을 <code class="docutils literal notranslate"><span class="pre">.html</span></code>파일로 빌드한다.</p></li>
+<li><p>다음은 ghihub 저장소에 올린다음</p></li>
+<li><p>github pages / actions 로 배포하면 끝이다.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>1.2 손이 좀 간다.<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>번거로움이 줄어든 것은 맞지만, 그래도 파일릉 옮기고 변환하고 하는 수고는 여전하다.</p></li>
+<li><p>문서가 추가되거나 변경될 때마다 위 과정을 반복해야 한다.</p></li>
+<li><p>체계적으로 정리되고 hypter texting이 되는 정적 포스팅이 된다는 점은 매력적이다.</p></li>
+</ul>
+</section>
+<section id="local">
+<h2>1.3 Local에서 하게 되는 구체적 과정과 주요 명령어<a class="headerlink" href="#local" title="Permalink to this heading">¶</a></h2>
+<section id="sphinx">
+<h3>1.3.1 sphinx설치 및 준비단계<a class="headerlink" href="#sphinx" title="Permalink to this heading">¶</a></h3>
+<ul>
+<li><p>우선 파이썬의 경우 가상환경을 준비한다.</p>
+<ul class="simple">
+<li><p>프로젝트에 관한 문서로 체워질 경우 프로젝트에서 사용되는 가상환경을 포함하게 될 것이다.(autodoc을 사용하려는 경우)</p></li>
+<li><p>그 가상환경에서 pip 으로 sphinx와 파서, 테마 등을 설치한다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">myst_parser</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx_rtd_theme</span>
+</pre></div>
+</div>
+</li>
+<li><p>배포용 git branch를 따로 두는 (예를 들어 gh-pages)예제들이 많다.</p></li>
+<li><p>프로젝트 폴더 안에서 <code class="docutils literal notranslate"><span class="pre">docs/</span></code> 라는 sphinx가 기동할 최상위 폴더를 만든다. 그 안에서 sphinx tool을 다음 명령으로 설치한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="o">-</span><span class="n">quickstart</span>
+</pre></div>
+</div>
+</li>
+<li><p>다음의 선택사항을 확인하는 메시지가 출력되고 적당히 응답한다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">have</span> <span class="n">two</span> <span class="n">options</span> <span class="k">for</span> <span class="n">placing</span> <span class="n">the</span> <span class="n">build</span> <span class="n">directory</span> <span class="k">for</span> <span class="n">Sphinx</span> <span class="n">output</span><span class="o">.</span>
+<span class="n">Either</span><span class="p">,</span> <span class="n">you</span> <span class="n">use</span> <span class="n">a</span> <span class="n">directory</span> <span class="s2">&quot;_build&quot;</span> <span class="n">within</span> <span class="n">the</span> <span class="n">root</span> <span class="n">path</span><span class="p">,</span> <span class="ow">or</span> <span class="n">you</span> <span class="n">separate</span>
+<span class="s2">&quot;source&quot;</span> <span class="ow">and</span> <span class="s2">&quot;build&quot;</span> <span class="n">directories</span> <span class="n">within</span> <span class="n">the</span> <span class="n">root</span> <span class="n">path</span><span class="o">.</span>
+<span class="o">&gt;</span> <span class="n">Separate</span> <span class="n">source</span> <span class="ow">and</span> <span class="n">build</span> <span class="n">directories</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="p">[</span><span class="n">n</span><span class="p">]:</span> 
+
+<span class="n">The</span> <span class="n">project</span> <span class="n">name</span> <span class="n">will</span> <span class="n">occur</span> <span class="ow">in</span> <span class="n">several</span> <span class="n">places</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">built</span> <span class="n">documentation</span><span class="o">.</span>
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">name</span><span class="p">:</span>
+<span class="o">&gt;</span> <span class="n">Author</span> <span class="n">name</span><span class="p">(</span><span class="n">s</span><span class="p">):</span> 
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">release</span> <span class="p">[]:</span>
+
+
+<span class="o">&gt;</span> <span class="n">Project</span> <span class="n">language</span> <span class="p">[</span><span class="n">en</span><span class="p">]:</span> 
+</pre></div>
+</div>
+</section>
+<section id="md-hierachy">
+<h3>1.3.2 <code class="docutils literal notranslate"><span class="pre">.md</span></code> 문서(폴더)를 이동/작성 하고 hierachy룰 기록한다.<a class="headerlink" href="#md-hierachy" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docs/source/</span></code> 에 <code class="docutils literal notranslate"><span class="pre">.md</span></code> 문서와 관련 <code class="docutils literal notranslate"><span class="pre">images/</span></code>폴더를 넣는다.</p></li>
+<li><p>문서들이 어떤 주제로 묶이고 상하관례가 어떻게 되는지를 <code class="docutils literal notranslate"><span class="pre">.rst</span></code>파일로 기록하여 저장한다.</p>
+<ul>
+<li><p>3 space indentation이므로 주의한다.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="local-computer-html-build">
+<h3>1.3.3 설정하고서 local computer에서 html파일들로 build한다<a class="headerlink" href="#local-computer-html-build" title="Permalink to this heading">¶</a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">conf.py</span></code> 가 설정파일이다.</p>
+<ul class="simple">
+<li><p>첫부분에서 path 관련 코멘트를 해제하고 <code class="docutils literal notranslate"><span class="pre">(.)</span></code> 를 <code class="docutils literal notranslate"><span class="pre">(../..)</span></code>으로 즉, <code class="docutils literal notranslate"><span class="pre">doc/</span></code>폴더를 최상위 폴더로 만든다.</p></li>
+<li><p>다음처럼 각 항목을 채운다.  markdown 파서와 theme에 관한 확장들이다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="s1">&#39;sphinx_rtd_theme&#39;</span><span class="p">,</span>
+<span class="s1">&#39;myst_parser&#39;</span><span class="p">,</span>  
+<span class="p">]</span>
+<span class="n">source_suffix</span> <span class="o">=</span> <span class="p">{</span> <span class="c1"># https://www.sphinx-doc.org/en/master/usage/markdown.html</span>
+<span class="s1">&#39;.rst&#39;</span><span class="p">:</span> <span class="s1">&#39;restructuredtext&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.txt&#39;</span><span class="p">:</span> <span class="s1">&#39;markdown&#39;</span><span class="p">,</span>
+<span class="s1">&#39;.md&#39;</span><span class="p">:</span> <span class="s1">&#39;markdown&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="github-pages">
+<h3>1.3.4 github pages에서 작동할 수 있게 두 가지 파일 추가<a class="headerlink" href="#github-pages" title="Permalink to this heading">¶</a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">source/</span></code> 폴더에 다음 두 개의 파일을 추가한다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code> jekyll을 사용하지 않곘다는 목적의 빈 파일이다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index.html</span></code> 시작페이지를 rediret할 목적으로 다음 스크립트로 채운다.</p></li>
+</ul>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;refresh&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;0; url=./build/html/index.html&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="github">
+<h2>1.4 github 에 올리고 배포하기까지<a class="headerlink" href="#github" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>배포용 브랜치 <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>로 올린다.</p></li>
+<li><p>settings로 클릭해서 들어가면 사이드 바에서 pages항목으로 클릭해 이동한다.</p></li>
+<li><p>Source 항목에서 <code class="docutils literal notranslate"><span class="pre">Deploy</span> <span class="pre">from</span> <span class="pre">a</span> <span class="pre">branch</span></code>, Branch 항목에서 <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> , <code class="docutils literal notranslate"><span class="pre">/docs/</span></code> 로 설정하고 <code class="docutils literal notranslate"><span class="pre">Save</span></code>한다.</p></li>
+<li><p>Actions 탭을 클릭하면 배포과정을 볼 수 있고 완료할 때까지 기다려야 한댜.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../python/instance_class_static.html" class="btn btn-neutral float-left" title="2. Methods in classes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, wYe
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -9,6 +9,9 @@
 Lots to Learn!
 =================================
 
+Python Basic Tips
+-----------------
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -16,6 +19,13 @@ Lots to Learn!
    python/namespace.md
    python/instance_class_static.md
 
+Sphinx
+------
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   sphinx/setups.md   
 
 Indices and tables
 ==================

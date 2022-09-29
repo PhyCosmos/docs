@@ -1,4 +1,4 @@
-# Namespace in Python
+# 1. Namespace in Python
 
 - 같은 이름 사용으로 인한 충돌을 막기 위해 
 - scope resolution으로 구분되는 

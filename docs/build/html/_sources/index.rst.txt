@@ -6,8 +6,11 @@
 .. :github_url:
 ..    https://github.com/PhyCosmos/notes
 
-Welcome to notes's documentation!
+Lots to Learn!
 =================================
+
+Python Basic Tips
+-----------------
 
 .. toctree::
    :maxdepth: 2
@@ -16,6 +19,13 @@ Welcome to notes's documentation!
    python/namespace.md
    python/instance_class_static.md
 
+Sphinx
+------
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   sphinx/setups.md   
 
 Indices and tables
 ==================

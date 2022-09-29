@@ -1,4 +1,4 @@
-# 1. Methods in classes
+# 2. Methods in classes
 
 class 안에 있는 method 는 오브젝트 `cls`와 인스턴스 `self`에 대한 access 방식에 따라 3 가지로 나눌 수 있다.  
 
