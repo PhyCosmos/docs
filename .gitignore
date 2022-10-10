@@ -13,4 +13,5 @@ texexamples/graphs/*
 texexamples/reports/*
 !texexamples/reports/*.tex
 
+
 .vscode/
