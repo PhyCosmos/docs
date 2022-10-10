@@ -1,4 +1,16 @@
 .ipynb_checkpoints
 exer_*
 texexamples/*
+!texexamples/articles/
+texexamples/articles/*
+!texexamples/articles/*.tex
+
+!texexamples/graphs/
+texexamples/graphs/*
+!texexamples/graphs/*.tex
+
+!texexamples/reports/
+texexamples/reports/*
+!texexamples/reports/*.tex
+
 .vscode/
