@@ -13,5 +13,5 @@ texexamples/graphs/*
 texexamples/reports/*
 !texexamples/reports/*.tex
 
-
+__pycache__/
 .vscode/
