@@ -54,3 +54,68 @@ def cross_entropy_error(y, t):
 def softmax_loss(x, t):
     y = softmax(x)
     return cross_entropy_error(y, t)
+
+
+
+# Gradients
+def num_gradient_without_batch(f, x):
+    """Gradient of a scalar valued function in a numerical way.
+    x.size iteration required!
+    At position x known in numerical values, for each i, we calculate
+    f(xi + h) and f(xi - h), Hence, at least, 2 * x.size computations
+    are needed.
+
+    Parameters
+    ----------
+    f : scalar valued function of an array
+    x : input array of any shape.
+
+    Return
+    ------
+    gradient: An array of the shape of x
+    """
+    h = 1e-4     # small displacement
+    grad = np.zeros_like(x)
+    # iterate (the size of x) times
+    it = np.nditer(x, flags=['multi_index'], op_flags=['readwrite'])
+    while not it.finished:
+        idx = it.multi_index
+        original = x[idx]
+        # xi -> xi + h : forward
+        x[idx] = float(original) + h
+        fxh1 = f(x) # f(xi + 1)
+        # xi -> xi - h : backward
+        x[idx] = float(original) - h
+        fxh2 = f(x) # f(xi - 1)
+        # average difference: central difference
+        grad[idx] = (fxh1 - fxh2) / (2*h)
+        x[idx] = original # retrieve the original value
+
+        it.iternext()
+
+    return grad
+
+def num_gradient(f, X):
+    """Gradient of a scalar valued function in a numerical way.
+    Since X may be a batch data or not, reshaping X and iteration by batch_size
+    are required.
+
+    Parameters
+    ----------
+    f : scalar valued function of an array
+    X : input array of any shape with "first dimension of batch_size".
+
+    Return
+    ------
+    gradient: An array of the shape of X
+    """
+
+    if X.ndim == 1:
+        # X = X.reshape(1, X.size)
+        return num_gradient_without_batch(f, X)    
+    grad = np.zeros_like(X)
+
+    for i, x in enumerate(X):    # for each record x in a batch X
+        grad[i] = num_gradient_without_batch(f, x)
+
+    return grad
