@@ -1,12 +1,18 @@
-name: myenv
+name: tf2stock
 channels:
   - defaults
 dependencies:
   - python=3.9
   - ipykernel
-  - numpy
+  - pandas
   - matplotlib
-  - seaborn
+  - pymysql
   - bs4
+  - lxml
+  - sqlalchemy
+  - django
   - requests
-prefix: /home/wye/anaconda3/envs/myenv
+  - seaborn
+  - pylint
+  - sympy
+prefix: C:\Users\howsi\anaconda3\envs\tf2stock

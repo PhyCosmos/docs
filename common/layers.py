@@ -74,7 +74,8 @@ class Relu:
         return out
     def backward(self, dout):
         dout[self.mask] = 0
-        return dout
+        dx = dout
+        return dx
 
 class Sigmoid:
     def __init__(self) -> None:
@@ -109,9 +110,9 @@ class Affine:
         else:
             print("Type or dimension is wrong.")
             raise TypeError
-        return self.dX, self.dW, self.db
+        return self.dX
    
-class CEE_Softmax:
+class SoftmaxWithLoss:
     def __init__(self) -> None:
         self.y = None
         self.t = None
@@ -121,18 +122,96 @@ class CEE_Softmax:
         self.y = softmax(a)
         self.loss = cross_entropy_error(self.y, self.t)
         return self.loss
+    def backward(self, dout=1):
+        batch_size = self.t.shape[0]
+        if self.t.size == self.y.size: # 정답 레이블이 원-핫 인코딩 형태일 때
+            dx = (self.y - self.t) / batch_size
+        else:
+            dx = self.y.copy()
+            dx[np.arange(batch_size), self.t] -= 1
+            dx = dx / batch_size
+        
+        return dx
+    
+class BatchNormalization:
+    """
+    http://arxiv.org/abs/1502.03167
+    """
+    def __init__(self, gamma, beta, momentum=0.9, running_mean=None, running_var=None):
+        self.gamma = gamma
+        self.beta = beta
+        self.momentum = momentum
+        self.input_shape = None # 합성곱 계층은 4차원, 완전연결 계층은 2차원  
+
+        # 시험할 때 사용할 평균과 분산
+        self.running_mean = running_mean
+        self.running_var = running_var  
+        
+        # backward 시에 사용할 중간 데이터
+        self.batch_size = None
+        self.xc = None
+        self.std = None
+        self.dgamma = None
+        self.dbeta = None
+
+    def forward(self, x, train_flg=True):
+        self.input_shape = x.shape
+        if x.ndim != 2:
+            N, C, H, W = x.shape
+            x = x.reshape(N, -1)
+
+        out = self.__forward(x, train_flg)
+        
+        return out.reshape(*self.input_shape)
+            
+    def __forward(self, x, train_flg):
+        if self.running_mean is None:
+            N, D = x.shape
+            self.running_mean = np.zeros(D)
+            self.running_var = np.zeros(D)
+                        
+        if train_flg:
+            mu = x.mean(axis=0)
+            xc = x - mu
+            var = np.mean(xc**2, axis=0)
+            std = np.sqrt(var + 10e-7)
+            xn = xc / std
+            
+            self.batch_size = x.shape[0]
+            self.xc = xc
+            self.xn = xn
+            self.std = std
+            self.running_mean = self.momentum * self.running_mean + (1-self.momentum) * mu
+            self.running_var = self.momentum * self.running_var + (1-self.momentum) * var            
+        else:
+            xc = x - self.running_mean
+            xn = xc / ((np.sqrt(self.running_var + 10e-7)))
+            
+        out = self.gamma * xn + self.beta 
+        return out
+
     def backward(self, dout):
-        if dout.ndim == 2:
-            batch_size = dout.shape[0]
-        elif dout.ndim == 1:
-            batch_size = 1
-        else:
-            print("Type is wrong.")
-            raise TypeError
-        if self.y.size == self.t.size:  # one-hot일 경우에 같다.
-            da = (self.y - self.t)/batch_size
-        else:
-            da = self.y.copy()
-            da[np.arange(batch_size), self.t] -= 1 # y 사본으로 t one-hot 만들기
-            da = da / batch_size
-        return da
+        if dout.ndim != 2:
+            N, C, H, W = dout.shape
+            dout = dout.reshape(N, -1)
+
+        dx = self.__backward(dout)
+
+        dx = dx.reshape(*self.input_shape)
+        return dx
+
+    def __backward(self, dout):
+        dbeta = dout.sum(axis=0)
+        dgamma = np.sum(self.xn * dout, axis=0)
+        dxn = self.gamma * dout
+        dxc = dxn / self.std
+        dstd = -np.sum((dxn * self.xc) / (self.std * self.std), axis=0)
+        dvar = 0.5 * dstd / self.std
+        dxc += (2.0 / self.batch_size) * self.xc * dvar
+        dmu = np.sum(dxc, axis=0)
+        dx = dxc - dmu / self.batch_size
+        
+        self.dgamma = dgamma
+        self.dbeta = dbeta
+        
+        return dx
