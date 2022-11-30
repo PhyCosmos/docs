@@ -1,4 +1,4 @@
-# coding: utf-8
+#                     coding: utf-8
 import numpy as np
 from common.functions import *
 from common.util import im2col, col2im
@@ -49,9 +49,26 @@ class Affine:
         self.db = None
 
     def forward(self, x):
+        """ 해당 layer를 거쳐 내보내는 값을 결정한다. 여기서는
+        Affine 계산값. backward 계산에 활용하기 위해 초기 shape을 
+        클래스 변수로 기억시켜 둔다.        
+
+        Args:
+            x ((d,..,f) shaped ndarray): 반드시 2차 이상의 입력값 ndarray로서
+                shape의 첫 인덱스는 data record를 지칭해야 한다. 즉, d 개의
+                데이터(샘플)를 입력한다는 의미가 된다.
+
+        Returns:
+            (d,r) shaped ndarray: 계산 결과를 반환한다. 결과적인 shape은 클래스
+                마다 다르다.
+        """
         # 텐서 대응
+        
         self.original_x_shape = x.shape
-        x = x.reshape(x.shape[0], -1)
+        # One shape dimension can be -1. In this case, 
+        # the value is inferred from the length of the array 
+        # and remaining dimensions. e.g. (2, 3, 4) -> (2, 12)
+        x = x.reshape(x.shape[0], -1) # (1,f)->(1,f), (d,f)->(d,f), (d,m,f)->(d,m*f)...
         self.x = x
 
         out = np.dot(self.x, self.W) + self.b

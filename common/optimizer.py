@@ -2,8 +2,29 @@
 import numpy as np
 
 class SGD:
+    
+    """확률적 경사 하강법（Stochastic Gradient Descent）
+    
+    ========
+    initial settings 
+    ========
+    lr: <float> learning rate(or eta)    
 
-    """확률적 경사 하강법（Stochastic Gradient Descent）"""
+    ========
+    methods
+    ========
+    update { modify once external parameters via gradient of loss function at that time.
+        Args:
+            params: <dict> parameter arrays with keyes of parameter names, 
+                           supposed to be modified.
+            grads: <dict> gradient of loss function with keyes of parameter names, 
+                          supposed to be used to modify params. Each value of grads keyes
+                          has the same shape as that of params
+        
+        Returns:
+            .
+    }
+    """
 
     def __init__(self, lr=0.01):
         self.lr = lr

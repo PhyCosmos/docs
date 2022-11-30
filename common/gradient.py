@@ -32,6 +32,18 @@ def numerical_gradient_2d(f, X):
 
 
 def numerical_gradient(f, x):
+    """Calculate numerical gradient values of a scalar valued function f(x)
+    at the point x of single or multi-dimensional ndarray(vector or even matrix/tensor).
+
+    Args:
+        f (x): scalar valued function
+        x : ndarray(dtype=float) input point to f
+
+    Returns:
+        ndarray: gradient (array of partial derivatives via central differences)
+    """
+    x = np.array(x)
+    x = x.astype(float)
     h = 1e-4 # 0.0001
     grad = np.zeros_like(x)
     
@@ -42,9 +54,10 @@ def numerical_gradient(f, x):
         x[idx] = float(tmp_val) + h
         fxh1 = f(x) # f(x+h)
         
-        x[idx] = tmp_val - h 
+        x[idx] = float(tmp_val) - h 
         fxh2 = f(x) # f(x-h)
-        grad[idx] = (fxh1 - fxh2) / (2*h)
+        print(fxh1, fxh2)
+        grad[idx] = (fxh1 - fxh2) / (2*h) # single scalar value
         
         x[idx] = tmp_val # 값 복원
         it.iternext()   
