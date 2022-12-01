@@ -50,6 +50,15 @@ def mean_squared_error(y, t):
     return 0.5 * np.sum((y - t)**2, axis=0)
 
 def cross_entropy_error(y, t):
+    """스코어 y와 레이블 t를 받아 배치의 **평균** cross entropy error를 반환한다.
+
+    Args:
+        y (ndarray): (m, d) shaped scores
+        t (ndarray): (m, d) shaped labels
+
+    Returns:
+        float: 배치의 평균 Cross Entropy Error
+    """
     if  y.ndim == 1:
         t = t.reshape(1, t.size)
         y = y.reshape(1, y.size)
@@ -58,7 +67,8 @@ def cross_entropy_error(y, t):
         t = t.argmax(axis=1)
 
     batch_size = y.shape[0]
-    return -np.sum(np.log(y[np.arange(batch_size), t] + 1e-7)) / batch_size
+    # return -np.log(y[np.arange(batch_size), t] + 1e-7) # 본래는 배치입력시 손실 ndarray가 되어야 하지만,
+    return -np.sum(np.log(y[np.arange(batch_size), t] + 1e-7)) / batch_size # 배치의 평균 손실(float)
 
 def softmax_loss(x, t):
     y = softmax(x)

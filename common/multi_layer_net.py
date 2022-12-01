@@ -154,6 +154,6 @@ class MultiLayerNet:
         grads = {}
         for idx in range(1, self.hidden_layer_num+2):
             grads['W' + str(idx)] = self.layers['Affine' + str(idx)].dW + self.weight_decay_lambda * self.layers['Affine' + str(idx)].W
-            grads['b' + str(idx)] = self.layers['Affine' + str(idx)].db
+            grads['b' + str(idx)] = self.layers['Affine' + str(idx)].db # + self.weight_decay_lambda * 0
 
         return grads

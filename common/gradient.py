@@ -56,7 +56,6 @@ def numerical_gradient(f, x):
         
         x[idx] = float(tmp_val) - h 
         fxh2 = f(x) # f(x-h)
-        print(fxh1, fxh2)
         grad[idx] = (fxh1 - fxh2) / (2*h) # single scalar value
         
         x[idx] = tmp_val # 값 복원

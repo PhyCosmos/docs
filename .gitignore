@@ -15,3 +15,5 @@ texexamples/reports/*
 
 __pycache__/
 .vscode/
+
+*old.*

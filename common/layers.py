@@ -164,16 +164,16 @@ class SoftmaxWithLoss:
     def forward(self, a, t):
         self.t = t
         self.y = softmax(a)
-        self.loss = cross_entropy_error(self.y, self.t)
+        self.loss = cross_entropy_error(self.y, self.t) # ndarray가 아닌 batch의 **평균** loss값(float)
         return self.loss
     def backward(self, dout=1):
         batch_size = self.t.shape[0]
         if self.t.size == self.y.size: # 정답 레이블이 원-핫 인코딩 형태일 때
-            dx = (self.y - self.t) / batch_size
+            dx = (self.y - self.t)/batch_size # sum으로 브로드캐스팅 grad를 구할 때/ batch_size
         else:
             dx = self.y.copy()
             dx[np.arange(batch_size), self.t] -= 1
-            dx = dx / batch_size
+            dx = dx/batch_size # sum으로 브로드캐스팅 grad를 구할 때/ batch_size
         
         return dx
     
